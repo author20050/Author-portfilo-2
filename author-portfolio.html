@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Olumide — Creative Developer & UI/UX Designer. Web Dev, Bot Development, UI/UX Design">
   <title>Author — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -84,7 +85,7 @@
 
     /* ══ APP ══ */
     #app { display:none; opacity:0; transition:opacity 0.7s ease; position:relative; z-index:1; }
-    #app.show { opacity:1; }
+    #app.show { display:flex; opacity:1; }
 
     /* ══ LAYOUT ══ */
     .container {
@@ -367,7 +368,7 @@
     .tl-header {
       display:flex; align-items:center; gap:10px; margin-bottom:14px;
     }
-    .tl-icon { width:32px; height:32px; border-radius:9px; background:var(--card2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:15px; }
+    .tl-icon { width:32px; height:32px; border-radius:9px; background:var(--card2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:16px; }
     .tl-title { font-size:14px; font-weight:600; color:var(--txt); }
 
     .tl-list { position:relative; padding-left:18px; display:flex; flex-direction:column; gap:18px; }
@@ -474,7 +475,7 @@
       font-size:13px; font-weight:700; letter-spacing:0.04em;
       border:none; cursor:pointer; transition:var(--tr);
     }
-    .send-btn:hover { background:#22d4ff; box-shadow:0 0 20px var(--cyan-glow); }
+    .send-btn:hover:not(:disabled) { background:#22d4ff; box-shadow:0 0 20px var(--cyan-glow); }
     .send-btn:disabled { opacity:0.35; cursor:not-allowed; }
     .send-btn ion-icon { font-size:15px; }
 
@@ -522,7 +523,7 @@
 
       <div class="sep"></div>
 
-      <button class="show-contacts-btn" id="contactsToggle">
+      <button class="show-contacts-btn" id="contactsToggle" aria-label="Toggle contacts panel">
         <span>Show Contacts</span>
         <ion-icon name="chevron-down-outline"></ion-icon>
       </button>
@@ -530,21 +531,21 @@
       <div class="contacts-panel" id="contactsPanel">
         <ul class="contacts-list">
           <li class="contact-item">
-            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="icon-box"><ion-icon name="mail-outline" aria-label="email icon"></ion-icon></div>
             <div>
               <p class="c-label">Email</p>
               <p class="c-value"><a href="mailto:author@email.com">author@email.com</a></p>
             </div>
           </li>
           <li class="contact-item">
-            <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+            <div class="icon-box"><ion-icon name="call-outline" aria-label="phone icon"></ion-icon></div>
             <div>
               <p class="c-label">Phone</p>
               <p class="c-value"><a href="tel:+234000000000">+234 000 000 0000</a></p>
             </div>
           </li>
           <li class="contact-item">
-            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="icon-box"><ion-icon name="location-outline" aria-label="location icon"></ion-icon></div>
             <div>
               <p class="c-label">Location</p>
               <p class="c-value">Ekiti, Nigeria</p>
@@ -552,10 +553,10 @@
           </li>
         </ul>
         <div class="social-row">
-          <a href="https://github.com/author20050" class="social-btn" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-          <a href="#" class="social-btn"><ion-icon name="logo-tiktok"></ion-icon></a>
-          <a href="#" class="social-btn"><ion-icon name="logo-instagram"></ion-icon></a>
-          <a href="#" class="social-btn"><ion-icon name="logo-whatsapp"></ion-icon></a>
+          <a href="https://github.com/author20050" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="#" class="social-btn" aria-label="TikTok"><ion-icon name="logo-tiktok"></ion-icon></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
         </div>
       </div>
     </aside>
@@ -574,7 +575,7 @@
       <h2 class="article-title">About Me</h2>
 
       <div class="about-text">
-        <p>I'm a Creative Developer and UI/UX Designer based in Ekiti, Nigeria. I build clean, fast, and visually striking digital experiences — from animated web pages to WhatsApp bots to full platforms.</p>
+        <p>I'm a Creative Developer and UI/UX Designer based in Ekiti, Nigeria. I build clean, fast, and visually striking digital experiences — from animated web pages to WhatsApp bots to full platform development. My work combines technical precision with creative flair.</p>
         <p>I'm passionate about turning ideas into reality through code. I bring creativity and technical precision to everything I ship, with a late-night, dark-mode aesthetic that's uniquely mine.</p>
       </div>
 
@@ -587,7 +588,7 @@
             <span class="chip-arrow"><ion-icon name="chevron-down-outline"></ion-icon></span>
           </button>
           <div class="skill-projects-panel" id="panel-htmlcss">
-            <a href="https://authorized.dpdns.org" target="_blank" class="skill-proj-card">
+            <a href="https://authorized.dpdns.org" target="_blank" rel="noopener noreferrer" class="skill-proj-card">
               <div class="skill-proj-thumb" style="background:linear-gradient(135deg,#0a0a1e,#001830);">
                 <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#00c8ff;letter-spacing:0.1em;">SMO</span>
               </div>
@@ -861,7 +862,7 @@
       </div>
       <div class="projects-grid">
         <div class="proj-item active" data-cat="web">
-          <a href="https://authorized.dpdns.org" target="_blank" class="proj-card">
+          <a href="https://authorized.dpdns.org" target="_blank" rel="noopener noreferrer" class="proj-card">
             <div class="proj-thumb" style="background:linear-gradient(135deg,#0a0a1e,#001830);">
               <div class="proj-overlay"><ion-icon name="eye-outline"></ion-icon></div>
               <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#00c8ff;letter-spacing:0.15em;">SMOOTHIE</span>
@@ -954,7 +955,7 @@
     <article id="contact">
       <h2 class="article-title">Contact</h2>
       <div class="map-wrap">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126093.21446097698!2d5.1629!3d7.7199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044e34f1e3d5555%3A0x1d3b4ef2b5f6e123!2sEkiti%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1680000000000" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126093.21446097698!2d5.1629!3d7.7199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044e34f1e3d5555%3A0x1d3b4ef2b5f6e1288!2sEkiti%20State!5e0!3m2!1sen!2sng!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <p class="sec-title">Send a Message</p>
       <form id="contactForm">
@@ -963,7 +964,7 @@
           <input type="email" class="f-input" placeholder="Email address" required id="femail">
         </div>
         <textarea class="f-input" placeholder="Your message" required id="fmsg"></textarea>
-        <button class="send-btn" type="submit" id="sendBtn" disabled>
+        <button class="send-btn" type="submit" id="sendBtn">
           <ion-icon name="paper-plane-outline"></ion-icon>
           Send Message
         </button>
@@ -1003,87 +1004,135 @@ for (let i = 0; i < count; i++) {
 }
 
 setTimeout(() => {
-  scanlines.style.opacity = "1";
-  allLines.forEach(l => setTimeout(() => l.classList.add("on"), Math.random() * 500));
-}, 2100);
-
-setTimeout(() => intro.classList.add("zoom-out"), 2900);
+  allLines.forEach((line, idx) => {
+    setTimeout(() => line.classList.add("on"), idx * 20);
+  });
+}, 200);
 
 setTimeout(() => {
-  intro.style.display = "none";
-  app.style.display = "block";
-  requestAnimationFrame(() => requestAnimationFrame(() => app.classList.add("show")));
-}, 3700);
+  intro.classList.add("zoom-out");
+  scanlines.style.opacity = "1";
+  app.classList.add("show");
+}, 2800);
 
-// ── SKILL ACCORDION ──
-document.querySelectorAll(".skill-chip-btn").forEach(btn => {
-  btn.addEventListener("click", function() {
-    const panel = document.getElementById("panel-" + this.dataset.skill);
-    const isOpen = this.classList.contains("open");
-    // close all
-    document.querySelectorAll(".skill-chip-btn").forEach(b => b.classList.remove("open"));
-    document.querySelectorAll(".skill-projects-panel").forEach(p => p.classList.remove("open"));
-    // open clicked if it was closed
-    if (!isOpen) {
-      this.classList.add("open");
-      panel.classList.add("open");
-    }
+// ── NAVIGATION ──
+const navBtns = document.querySelectorAll(".nav-btn");
+const articles = document.querySelectorAll("article");
+
+navBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.nav;
+    navBtns.forEach(b => b.classList.remove("active"));
+    articles.forEach(a => a.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById(target).classList.add("active");
   });
 });
 
 // ── CONTACTS TOGGLE ──
-document.getElementById("contactsToggle").addEventListener("click", function() {
-  this.classList.toggle("open");
-  document.getElementById("contactsPanel").classList.toggle("open");
-  this.querySelector("span").textContent = this.classList.contains("open") ? "Hide Contacts" : "Show Contacts";
+const contactsToggle = document.getElementById("contactsToggle");
+const contactsPanel = document.getElementById("contactsPanel");
+
+contactsToggle.addEventListener("click", () => {
+  contactsToggle.classList.toggle("open");
+  contactsPanel.classList.toggle("open");
 });
 
-// ── NAV TABS ──
-document.querySelectorAll(".nav-btn").forEach(btn => {
-  btn.addEventListener("click", function() {
-    document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll("article").forEach(a => a.classList.remove("active"));
-    this.classList.add("active");
-    document.getElementById(this.dataset.nav).classList.add("active");
-    window.scrollTo(0, 0);
+// ── SKILL ACCORDION ──
+const skillBtns = document.querySelectorAll(".skill-chip-btn");
+
+skillBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const skill = btn.dataset.skill;
+    const panel = document.getElementById(`panel-${skill}`);
+    
+    skillBtns.forEach(b => b.classList.remove("open"));
+    document.querySelectorAll(".skill-projects-panel").forEach(p => p.classList.remove("open"));
+    
+    btn.classList.add("open");
+    panel.classList.add("open");
   });
 });
-
-// ── TESTIMONIAL MODAL ──
-const modal = document.getElementById("modal");
-const modalName = document.getElementById("modalName");
-const modalBody = document.getElementById("modalBody");
-const modalAvatar = document.getElementById("modalAvatar");
-
-document.querySelectorAll(".t-card").forEach(card => {
-  card.addEventListener("click", function() {
-    modalName.textContent = this.dataset.name;
-    modalBody.textContent = this.dataset.text;
-    modalAvatar.textContent = this.dataset.name[0];
-    modal.classList.add("open");
-  });
-});
-document.getElementById("modalClose").addEventListener("click", () => modal.classList.remove("open"));
-modal.addEventListener("click", e => { if(e.target === modal) modal.classList.remove("open"); });
 
 // ── PORTFOLIO FILTER ──
-document.querySelectorAll(".f-btn").forEach(btn => {
-  btn.addEventListener("click", function() {
-    document.querySelectorAll(".f-btn").forEach(b => b.classList.remove("active"));
-    this.classList.add("active");
-    const val = this.dataset.filter;
-    document.querySelectorAll(".proj-item").forEach(item => {
-      item.classList.toggle("active", val === "all" || item.dataset.cat === val);
+const filterBtns = document.querySelectorAll(".f-btn");
+const projItems = document.querySelectorAll(".proj-item");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+    
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    
+    projItems.forEach(item => {
+      if (filter === "all" || item.dataset.cat === filter) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
     });
   });
 });
 
-// ── CONTACT FORM ──
-const fields = document.querySelectorAll("#fname, #femail, #fmsg");
+// ── TESTIMONIALS MODAL ──
+const testimonials = document.querySelectorAll(".t-card");
+const modal = document.getElementById("modal");
+const modalClose = document.getElementById("modalClose");
+const modalName = document.getElementById("modalName");
+const modalBody = document.getElementById("modalBody");
+const modalAvatar = document.getElementById("modalAvatar");
+
+testimonials.forEach(card => {
+  card.addEventListener("click", () => {
+    const name = card.dataset.name;
+    const text = card.dataset.text;
+    
+    modalName.textContent = name;
+    modalBody.textContent = text;
+    modalAvatar.textContent = name.charAt(0);
+    modal.classList.add("open");
+  });
+});
+
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("open");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("open");
+  }
+});
+
+// ── FORM VALIDATION ──
+const contactForm = document.getElementById("contactForm");
 const sendBtn = document.getElementById("sendBtn");
-fields.forEach(f => f.addEventListener("input", () => {
-  sendBtn.disabled = !([...fields].every(f => f.value.trim()));
-}));
+const fname = document.getElementById("fname");
+const femail = document.getElementById("femail");
+const fmsg = document.getElementById("fmsg");
+
+function validateForm() {
+  const isValid = fname.value.trim() !== "" && femail.value.trim() !== "" && fmsg.value.trim() !== "";
+  sendBtn.disabled = !isValid;
+}
+
+fname.addEventListener("input", validateForm);
+femail.addEventListener("input", validateForm);
+fmsg.addEventListener("input", validateForm);
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendBtn.disabled = true;
+  sendBtn.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon> Sent!';
+  
+  setTimeout(() => {
+    contactForm.reset();
+    sendBtn.innerHTML = '<ion-icon name="paper-plane-outline"></ion-icon> Send Message';
+    validateForm();
+  }, 2000);
+});
 </script>
+
 </body>
 </html>
