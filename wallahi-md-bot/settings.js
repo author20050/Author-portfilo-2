@@ -1,9 +1,8 @@
 module.exports = {
   botName: process.env.BOT_NAME || 'wallahi MD',
   ownerId: process.env.OWNER_ID || '',
-  // Use only after adding your own image at menu-bg.jpg. Chat background customization
-  // is not available in Telegram/WhatsApp bots; this image is sent with the menu.
-  menuImagePath: './menu-bg.jpg',
+  // Bots cannot set a true chat wallpaper; this image is sent with menu messages.
+  menuImagePath: 'Screenshot_20261107_001703117.jpg',
   antilink: true,
   maxDownloadBytes: 15 * 1024 * 1024,
   maxTagAll: 100,
